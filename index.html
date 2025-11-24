@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Solune</title>
+  <title>SOLUNE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #05060a;
-      color: #f5f5f5;
+      background: #050713; /* deep cosmic */
+      color: #e7e3df;      /* soft sand */
       line-height: 1.6;
     }
     header {
-      padding: 3rem 1.5rem;
+      padding: 3rem 1.5rem 3.5rem;
       text-align: center;
-      background: radial-gradient(circle at top, #2c3e50, #05060a);
+      background: radial-gradient(circle at top, #334155, #050713 55%);
     }
     .container {
       max-width: 900px;
@@ -26,30 +26,58 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    h1 { font-size: 2.5rem; }
+    h1 {
+      font-size: 2.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
     h2 { margin-top: 2rem; }
     p { margin: 0.5rem 0 1rem; }
+
+    .tagline {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #c7b09e;
+      margin-bottom: 0.75rem;
+    }
+
+    .subline {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      max-width: 700px;
+      margin: 0.5rem auto 0;
+    }
+
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
+      padding: 0.75rem 1.6rem;
+      margin-top: 1.8rem;
       border-radius: 999px;
-      border: none;
-      background: #f5f5f5;
-      color: #05060a;
+      border: 1px solid #e7e3df;
+      background: transparent;
+      color: #e7e3df;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
     }
+    .btn:hover {
+      background: #e7e3df;
+      color: #050713;
+    }
+
     .card {
-      background: #0b0d14;
+      background: #050914;
       border-radius: 1rem;
       padding: 1.25rem 1.5rem;
       margin: 1rem 0;
-      border: 1px solid #222633;
+      border: 1px solid #1f2937;
     }
     ul {
       padding-left: 1.2rem;
+    }
+    ol {
+      padding-left: 1.4rem;
     }
     footer {
       text-align: center;
@@ -61,8 +89,13 @@
 </head>
 <body>
   <header>
-    <h1>Think Deeper</h1>
-    <p>Thought built on bedrock..</p>
+    <div class="tagline">Sun & Moon of the Mind</div>
+    <h1>SOLUNE</h1>
+    <p class="subline">
+      A project about thinking in balance — logic and emotion, light and shadow,
+      your side and theirs. Not telling you what to believe, but helping you see
+      clearly in a world built to blur your vision.
+    </p>
     <a href="#start" class="btn">Start Thinking</a>
   </header>
 
@@ -70,9 +103,16 @@
     <section>
       <h2>The Problem</h2>
       <div class="card">
-        <p>Algorithms reward outrage and speed. Our brains like shortcuts. Put them together and you get a world where anything that feels good can look true.</p>
-        <p>This site doesn’t tell you what to believe. It shows you how to think for yourself.</p>
-<p>Thought built on bedrock. A project devoted to helping humans think clearly in a world of noise, division, and manipulation.</p>
+        <p>
+          Algorithms reward outrage and speed. Our brains like shortcuts.
+          Put them together and anything that hits the right emotion
+          can start to feel like truth.
+        </p>
+        <p>
+          Solune is about stepping back — seeing the full orbit, not just the
+          frame someone chose for you. Less “me vs them”, more “what’s actually
+          going on here?”
+        </p>
       </div>
     </section>
 
@@ -85,6 +125,7 @@
           <li><strong>Rule 2:</strong> Never trust a short clip without context.</li>
           <li><strong>Rule 3:</strong> Look for the strongest version of the other side.</li>
           <li><strong>Rule 4:</strong> Separate how it makes you feel from whether it’s true.</li>
+          <li><strong>Rule 5:</strong> Be willing to say “I don’t know yet” instead of forcing a team.</li>
         </ul>
       </div>
     </section>
@@ -94,12 +135,12 @@
       <div class="card">
         <p><em>A viral clip claims: “&lt;insert example claim here&gt;”.</em></p>
         <ol>
-          <li><strong>Define the claim:</strong> What exactly is being said?</li>
-          <li><strong>Evidence shown:</strong> What do we actually see or hear?</li>
-          <li><strong>What’s missing:</strong> What context, numbers, or sources are not there?</li>
-          <li><strong>Source check:</strong> Who posted this and what do they gain?</li>
-          <li><strong>Cross-check:</strong> What do independent sources say?</li>
-          <li><strong>Provisional verdict:</strong> True / partly true / misleading / unknown.</li>
+          <li><strong>Define the claim:</strong> What exactly is being said, in one clear sentence?</li>
+          <li><strong>Evidence shown:</strong> What do we actually see or hear, and what is added as text, music, or editing?</li>
+          <li><strong>What’s missing:</strong> Time, place, numbers, full quote, other angles, other people?</li>
+          <li><strong>Source check:</strong> Who posted this? What do they gain — money, status, outrage, validation?</li>
+          <li><strong>Cross-check:</strong> What do independent sources or longer-form material say about this?</li>
+          <li><strong>Provisional verdict:</strong> True / partly true / misleading / unknown. Be honest if you still don’t know.</li>
         </ol>
       </div>
     </section>
@@ -109,24 +150,37 @@
       <div class="card">
         <h3>Before You Share Anything</h3>
         <ul>
-          <li>Is there a source I can actually read, not just a screenshot?</li>
-          <li>Does this mostly make me angry, scared, or proud?</li>
-          <li>Have I seen a serious argument from the other side?</li>
+          <li>Is there a source I can actually read, not just a screenshot or a caption?</li>
+          <li>Does this mostly make me angry, scared, or proud — more than it makes me think?</li>
+          <li>Have I seen a serious argument from the other side, not just a strawman?</li>
           <li>Can I explain the claim in my own words without exaggerating it?</li>
+          <li>Would I still believe this if it came from someone on the “other” team?</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>About This Project</h2>
+      <h2>About Solune</h2>
       <div class="card">
-        <p>I’m a 24 year old engineering student who’s tired of seeing people get manipulated by low-effort content.Random tik toks, instagram reels or any short formated content, youtube included. I want to create something that helps humaninty move into a more positive direction. So im building this project and see where it goes</p>
+        <p>
+          I’m a 24-year-old engineering student who’s tired of watching people get
+          dragged around by low-effort content — TikToks, reels, shorts, whatever
+          format the algorithm spits out next.
+        </p>
+        <p>
+          Solune is my attempt to build something different: a small corner of the
+          internet where you practice thinking in full — sun and moon, daymind and
+          nightmind, logic and emotion — instead of letting someone else think for you.
+        </p>
+        <p>
+          This is version one. It will change as I do.
+        </p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Built as a small step toward a smarter, more honest civilization.</p>
+    <p>SOLUNE — Sun & Moon of the mind.</p>
   </footer>
 </body>
 </html>
