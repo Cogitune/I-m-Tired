@@ -4,42 +4,135 @@
   <meta charset="UTF-8" />
   <title>SOLUNE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-main: #050713;
+      --bg-card: #050914;
+      --bg-header: #0b1220;
+      --border-subtle: #1f2937;
+      --text-main: #e7e3df;
+      --text-muted: #9ca3af;
+      --accent: #facc6b;
+      --accent-soft: #c7b09e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050713; /* deep cosmic */
-      color: #e7e3df;      /* soft sand */
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #050713 55%);
+      color: var(--text-main);
       line-height: 1.6;
     }
+
     header {
-      padding: 3rem 1.5rem 3.5rem;
-      text-align: center;
-      background: radial-gradient(circle at top, #334155, #050713 55%);
+      padding: 1.25rem 1.5rem 3.5rem;
+      background: linear-gradient(to bottom, #020617, #020617dd 50%, transparent);
+      position: relative;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+
+    .nav-shell {
+      max-width: 1000px;
+      margin: 0 auto 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
-    h1 {
-      font-size: 2.8rem;
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f97316, #facc6b 45%, transparent 60%);
+      box-shadow: 0 0 25px rgba(250, 204, 107, 0.35);
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 30% 8% 10% 45%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 40% 30%, #e5e7eb, #9ca3af 50%, transparent 70%);
+      opacity: 0.8;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-family: "Cinzel", serif;
       letter-spacing: 0.18em;
+      font-size: 0.9rem;
       text-transform: uppercase;
     }
-    h2 { margin-top: 2rem; }
-    p { margin: 0.5rem 0 1rem; }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-soft);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.85rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      border-color: rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      opacity: 1;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1.5rem 1.5rem 0;
+    }
 
     .tagline {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: #c7b09e;
+      color: var(--accent-soft);
       margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem;
     }
 
     .subline {
@@ -58,49 +151,124 @@
       background: transparent;
       color: #e7e3df;
       font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
     }
+
     .btn:hover {
       background: #e7e3df;
       color: #050713;
     }
 
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
     .card {
-      background: #050914;
-      border-radius: 1rem;
+      background: var(--bg-card);
+      border-radius: 1.1rem;
       padding: 1.25rem 1.5rem;
       margin: 1rem 0;
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     ol {
       padding-left: 1.4rem;
     }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
       padding: 2rem 1.5rem 3rem;
-      color: #9ca3af;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.8);
+      background: radial-gradient(circle at bottom, #020617, #020617 45%, transparent);
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+      header {
+        padding-bottom: 3rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="tagline">Sun & Moon of the Mind</div>
-    <h1>SOLUNE</h1>
-    <p class="subline">
-      A project about thinking in balance — logic and emotion, light and shadow,
-      your side and theirs. Not telling you what to believe, but helping you see
-      clearly in a world built to blur your vision.
-    </p>
-    <a href="#start" class="btn">Start Thinking</a>
+    <div class="nav-shell">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <span class="brand-name">SOLUNE</span>
+          <span class="brand-sub">Sun & Moon of the Mind</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#top">Home</a>
+        <a href="#problem">Problem</a>
+        <a href="#how">How to Think</a>
+        <a href="#case-files">Case Files</a>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+
+    <div class="hero" id="top">
+      <div class="tagline">Sun & Moon of the Mind</div>
+      <h1>SOLUNE</h1>
+      <p class="subline">
+        A project about thinking in balance — logic and emotion, light and shadow,
+        your side and theirs. Not telling you what to believe, but helping you see
+        clearly in a world built to blur your vision.
+      </p>
+      <a href="#problem" class="btn">Start Thinking</a>
+    </div>
   </header>
 
-  <main class="container" id="start">
-    <section>
+  <main class="container">
+    <section id="problem">
+      <div class="section-kicker">Why Solune Exists</div>
       <h2>The Problem</h2>
       <div class="card">
         <p>
@@ -116,7 +284,8 @@
       </div>
     </section>
 
-    <section>
+    <section id="how">
+      <div class="section-kicker">Mental Foundations</div>
       <h2>How to Think (Not What to Think)</h2>
       <div class="card">
         <h3>Core Rules</h3>
@@ -130,7 +299,8 @@
       </div>
     </section>
 
-    <section>
+    <section id="case-files">
+      <div class="section-kicker">Practice</div>
       <h2>Case File #1</h2>
       <div class="card">
         <p><em>A viral clip claims: “&lt;insert example claim here&gt;”.</em></p>
@@ -145,7 +315,8 @@
       </div>
     </section>
 
-    <section>
+    <section id="tools">
+      <div class="section-kicker">Everyday Use</div>
       <h2>Tools for Your Brain</h2>
       <div class="card">
         <h3>Before You Share Anything</h3>
@@ -159,7 +330,8 @@
       </div>
     </section>
 
-    <section>
+    <section id="about">
+      <div class="section-kicker">Who’s Behind This</div>
       <h2>About Solune</h2>
       <div class="card">
         <p>
